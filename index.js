@@ -1,17 +1,8 @@
-const express = require('express');
+import express from "express";
+import tasks from "./routes/tasks";
 const app = express();
 
-app.get('/', (req, res)=>{
-    res.send('Welcome to home page')
-});
-
-app.get('/hello', (req, res)=>{
-    res.send(`Sending hello`)
-});
-
-app.post('/hello', (req, res) => {
-    res.send(`Handling post req for /hello`);
-})
+app.use("/tasks", tasks);
 
 const PORT = 3000;
 
